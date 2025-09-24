@@ -84,10 +84,10 @@ const Article = () => {
             data-google-query-id="CMrLupSG5Y8DFWujZgIdR84NgA"
             style={{ margin: "30px auto" }}
           >
-            <div
+            {/* <div
               id="google_ads_iframe_/23290324739/Manifest-Desktop-TOP-970_0__container__"
               style={{ border: "0pt none", width: 970, height: 0 }}
-            />
+            /> */}
           </div>
         </div>
         <div className="big-container-blog">

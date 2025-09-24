@@ -8,11 +8,23 @@ const images = [
   "https://assets.website-files.com/61b711f830d358f225addd55/61bcabbcd640fb87be01a8e7_slider_04-p-1600.jpeg",
 ];
 
+const DesktopVideos = [
+  "https://d2j4tkbto6uvqv.cloudfront.net/kalpataru/video/1757383146.mp4",
+  "https://d2j4tkbto6uvqv.cloudfront.net/kalpataru/video/1757382996.mp4",
+  "https://d2j4tkbto6uvqv.cloudfront.net/kalpataru/video/1751550319.mp4",
+  "https://d2j4tkbto6uvqv.cloudfront.net/kalpataru/video/1751548918.mp4",
+];
 const miniImages = [
   "https://assets.website-files.com/61b711f830d358f225addd55/61b72a66c08f141b4270a9dc_advant_01-mini.jpg",
   "https://assets.website-files.com/61b711f830d358f225addd55/61bcabbb22703a5137412068_advant_02-mini.jpg",
   "https://assets.website-files.com/61b711f830d358f225addd55/61bcabbbf135aa24f4d05199_advant_03-mini.jpg",
   "https://assets.website-files.com/61b711f830d358f225addd55/61bcabbbf3724083aa853727_advant_04-mini.jpg",
+];
+const DesktopVideosMini = [
+  "https://d2j4tkbto6uvqv.cloudfront.net/kalpataru/video/1757383146.mp4",
+  "https://d2j4tkbto6uvqv.cloudfront.net/kalpataru/video/1757382996.mp4",
+  "https://d2j4tkbto6uvqv.cloudfront.net/kalpataru/video/1751550319.mp4",
+  "https://d2j4tkbto6uvqv.cloudfront.net/kalpataru/video/1751548918.mp4",
 ];
 
 const texts = [
@@ -57,17 +69,34 @@ const Project = () => {
       <div className={`${styles.content} ${styles.mod__advant}`}>
         <div className={styles.advant__tabs}>
           <div data-tabs="images" className={styles.advant__img_wrap}>
-            {images.map((img, index) => {
+            {DesktopVideos.map((video, index) => {
               const isActive = index === activeIndex;
               const isPrev = index === prevIndex;
 
               return (
-                <img
-                  key={index}
+                // <img
+                //   key={index}
+                //   loading="lazy"
+                //   src={img}
+                //   data-anim="img"
+                //   alt=""
+                //   className={`${styles.advant__img} ${
+                //     styles[`mod__${index + 1}`]
+                //   }`}
+                //   style={{
+                //     height: isActive || isPrev ? "100%" : "0",
+                //     overflow: "hidden",
+                //     transition: "height 0.4s ease",
+                //   }}
+                // />
+                <video
+                  loop
+                  playsInline
+                  muted
+                  autoPlay
                   loading="lazy"
-                  src={img}
-                  data-anim="img"
-                  alt=""
+                  key={index}
+                  src={video}
                   className={`${styles.advant__img} ${
                     styles[`mod__${index + 1}`]
                   }`}
@@ -76,7 +105,7 @@ const Project = () => {
                     overflow: "hidden",
                     transition: "height 0.4s ease",
                   }}
-                />
+                ></video>
               );
             })}
           </div>
@@ -96,26 +125,43 @@ const Project = () => {
                   data-tabs="images-mini"
                   className={styles.advant__card_img_wrap}
                 >
-                  {miniImages.map((img, index) => {
+                  {DesktopVideosMini.map((video, index) => {
                     const isActive = index === activeIndex;
                     const isPrev = index === prevIndex;
 
                     return (
-                      <img
-                        key={index}
+                      // <img
+                      //   key={index}
+                      //   loading="lazy"
+                      //   src={img}
+                      //   data-anim="img"
+                      //   alt=""
+                      //   className={`${styles.advant__card_img} ${
+                      //     styles[`mod__${index + 1}`]
+                      //   }`}
+                      //   style={{
+                      //     height: isActive || isPrev ? "100%" : "0",
+                      //     overflow: "hidden",
+                      //     transition: "height 0.4s ease",
+                      //   }}
+                      // />
+                      <video
+                        loop
+                        playsInline
+                        muted
+                        autoPlay
                         loading="lazy"
-                        src={img}
-                        data-anim="img"
-                        alt=""
-                        className={`${styles.advant__card_img} ${
+                        key={index}
+                        src={video}
+                       className={`${styles.advant__card_img} ${
                           styles[`mod__${index + 1}`]
                         }`}
-                        style={{
+                       style={{
                           height: isActive || isPrev ? "100%" : "0",
                           overflow: "hidden",
                           transition: "height 0.4s ease",
                         }}
-                      />
+                      ></video>
                     );
                   })}
                 </div>
